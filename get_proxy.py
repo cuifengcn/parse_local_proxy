@@ -2,7 +2,12 @@ import winreg
 import re
 import requests
 
+# method1
+import urllib.request
 
+print(urllib.request.getproxies())
+
+# method2
 def get_proxy():
     proxy = winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings")
     server, _type = winreg.QueryValueEx(proxy, "ProxyServer")  # 代理的地址
